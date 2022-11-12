@@ -1,0 +1,50 @@
+<nav class="navbar" style="margin-top: -20px;" >
+    <ul >
+      <li class="active" style="padding-top: 30px;"> <a [routerLink]="['home-component']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >početna</a></li>
+      <li style="padding-top: 30px;" > <a [routerLink]="['movies-component']" >Filmovi</a></li>
+      <li  style="padding-top: 30px;"> <a [routerLink]="['actors-component']" >Glumci</a></li>
+
+      <span *ngFor="let role of userService?.currentUser?.authorities" >
+      <li *ngIf="role=='ROLE_ADMIN' || role =='ROLE_USER'" style="padding-top: 30px;"> <a [routerLink]="['dodaj-component']" >DODAJ FILM</a></li>
+     </span>
+
+        <form class="form-inline dont" style="padding-left:20px ;"  width="10px"> 
+            <input style="width: 350px;" onfocus="this.value=''" class="form-control mr-sm-6" type="text" placeholder="Search" aria-label="Search" list="menace" name="menace" [(ngModel)]="codeValue" (change)="saveCode($event)">
+            <datalist id="menace" >
+              <option  *ngFor="let menace of movies" > <a [routerLink]="['/movie-details-component', menace.idMovie]">{{menace.title}}</a> </option>
+            </datalist>
+        </form> 
+        
+    </ul>
+    <ul class="navbar-right dont  " style="position: absolute; right: 0;" >
+        <ul class="navbar-nav dont" *ngIf="isUserLoggedIn()">  
+            <li class="nav-item dont">
+                <a class="nav-link cursor-pointer dont">
+                  <span>Korisničko ime:<span style="color: red;"> {{userService?.currentUser?.username}}</span></span>
+                </a>
+            </li>
+
+            <li class="nav-item dont">
+                <a class="nav-link cursor-pointer" id="logout" (click)="logout()">
+                    <span>Odjava </span>
+                </a>
+            </li>
+        </ul>
+
+        <li class="nav-item dont " routerLink="/login" *ngIf="!isUserLoggedIn()">
+            <a class="nav-link cursor-pointer" id="login">
+                <span> prijava</span>
+            </a>
+        </li>
+    </ul> 
+  </nav> 
+  <hr>
+ 
+ 
+            
+            <!--   <li class="nav-item">
+                  <a class="nav-link cursor-pointer">
+                      <span>Rola:<span *ngFor="let role of userService?.currentUser?.authorities" style="color: red;">{{role}} </span></span>
+                  </a>
+              </li>-->
+           

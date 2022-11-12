@@ -1,0 +1,16 @@
+
+
+
+
+
+
+<ul class="tilesWrap">
+	<li *ngFor="let movie of movies">
+        <img src="{{movie.image}}" width="200" height="125">  
+		<h3 style="color: rgba(255, 0, 0, 0.514);">{{movie.title}}</h3>
+		<p >
+			{{movie.synopsis}}
+		</p>
+		<button [routerLink]="['/movie-details-component', movie.idMovie]">Read more</button>
+	</li>
+</ul>

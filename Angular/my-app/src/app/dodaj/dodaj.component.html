@@ -1,0 +1,78 @@
+
+  <span id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container form">
+        <div class="login-wrap" >
+          <div class="login-html">
+          
+            <div  style="text-align: center;">
+              <img src="./assets/img/blue.png"width="350" height="125"  > </div>
+             
+                <H1 style="text-align: center; color: red;">Pretraži i dodaj novi film!</H1>
+            <div class="login-form">
+               
+              <div class="sign-in-htm" style="text-align: center;" >
+                        <div class="group">
+                            <label for="user" class="label">Naziv</label>
+                            <input  placeholder="-" id="user" autocomplete="off" type="text" class="input" [(ngModel)]="params.title" onfocus="this.value=''"  > 
+                        </div>
+                        <div class="group" >
+                            <label for="user" class="label">Godina</label>
+                            <input placeholder="-" id="dsa" type="text" class="input" autocomplete="off"  [(ngModel)]="params.year" onfocus="this.value=''" >
+                        </div>
+                        <div class="group" >
+                            <label for="user" class="label">Žanr</label>
+                            <input placeholder="-" id="asd" type="text" class="input" autocomplete="off"  [(ngModel)]="params.genre" onfocus="this.value=''" >
+                        </div>
+                       
+                        <span class="group" >
+                            <!--<input type="submit" class="button" value="Sign Up">-->
+                            <button
+                            (click)="search()"
+                                        class="button" type="submit" style="font-weight: bold;">pretraži!
+                                    </button>
+                        </span>
+                        <div class="hr"></div>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span id="id01" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container form">
+          <div class="login-wrap" >
+            <div class="login-html">
+            
+              <div  style="text-align: center;">
+              
+              <div class="login-form">
+                 
+                <div class="sign-in-htm grupa" style="text-align: center;" >
+                         
+                       
+                          <span  >
+                             
+                              <input type="text" [(ngModel)]="cl.genre" style="color: red; background-color:rgba(0,0,0,.24); border:none; outline:none; text-align: center; width: 100%;"onfocus="this.blur()" readonly="readonly" >
+                              <input type="text" [(ngModel)]="cl.year" style="color: red; background-color:rgba(0,0,0,.24); border:none; outline:none; text-align: center; width: 100%;"onfocus="this.blur()" readonly="readonly" >
+
+                            </span>
+                         
+                          
+                      </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <ul class="tilesWrap">
+        <li *ngFor="let movie of result">
+            <img src="{{movie.year}}" width="200" height="200">  
+            <h3 style="color: rgba(255, 0, 0, 0.514);">{{movie.title}}</h3>
+            <p >
+                {{movie.genre}}
+            </p>
+            <button (click)="add(movie.idImdb)" >Dodaj</button>
+        </li>
+    </ul>

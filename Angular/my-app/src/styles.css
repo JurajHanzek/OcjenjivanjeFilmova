@@ -1,0 +1,8 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: #1A1E23;
+    font-family: 'Lato', sans-serif;
+    color:white;
+    -webkit-font-smoothing: antialiased;  }
+  

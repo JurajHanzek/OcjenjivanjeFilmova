@@ -1,0 +1,40 @@
+
+
+<div class="row" style="margin-bottom: 600px;">
+    <div class="col-lg-4">
+      <div class="centered">
+        <img src="{{actor.image}} " width="500px" height="700px">
+      </div>
+    </div>
+
+    <div class="col-lg-8"> <div class="centered">
+      <h2 style="color: red;">{{actor.name}} {{actor.lastName}}</h2>
+      <hr>
+      <p>Rođen: {{actor.dateOfBirth}}.</p>
+      <p>{{actor.info}}</p>
+      <h3>Poznat je po filmovima:</h3>
+      <div *ngFor="let movie of movies;">
+        <div style="text-align: left;">
+          <p style="text-align: left; color:red;" >{{movie.title}}
+              <span *ngFor="let ch of char;">
+                <ng-container *ngIf="movie.idMovie===ch.idMovie">
+                 (Uloga: {{ch.name}} )
+              </ng-container>
+              </span>
+
+              </p>
+          <iframe width="560" height="315" [src]="sanitizer.bypassSecurityTrustResourceUrl(movie.trailerUrl)" frameborder="0" allowfullscreen></iframe>
+      </div> 
+     
+    </div>
+</div>
+</div>
+
+
+
+
+
+  <hr>
+
+
+

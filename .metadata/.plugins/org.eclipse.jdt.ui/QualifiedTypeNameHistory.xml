@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="java.sql.Blob"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.beans.MovieRating"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.JsonArray"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.core.JsonParser"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.JsonParser"/>
+    <fullyQualifiedTypeName name="org.json.JSONArray"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.JsonNode"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+    <fullyQualifiedTypeName name="org.springframework.util.StringUtils"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.dao.ActorDao"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.beans.Actor"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.beans.Movie"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="hr.tvz.hanzek.studapp.security.jwt.TokenProvider"/>
+    <fullyQualifiedTypeName name="hr.tvz.hanzek.studapp.security.SecurityUtils"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.user.UserRepository"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.security.jwt.TokenProvider"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.security.jwt.JwtFilter"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.security.SecurityUtils"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="org.springframework.dao.IncorrectResultSizeDataAccessException"/>
+    <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.user.User"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.config.SecurityConfiguration"/>
+    <fullyQualifiedTypeName name="org.springframework.security.crypto.password.PasswordEncoder"/>
+    <fullyQualifiedTypeName name="org.springframework.security.access.annotation.Secured"/>
+    <fullyQualifiedTypeName name="org.springframework.security.access.prepost.PreAuthorize"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.springframework.dao.EmptyResultDataAccessException"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.beans.UserRating"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.dao.DodajFilmService"/>
+    <fullyQualifiedTypeName name="com.hanzek.zavrsni.beans.MovieData"/>
+    <fullyQualifiedTypeName name="java.net.http.HttpRequest"/>
+    <fullyQualifiedTypeName name="java.net.http.HttpClient"/>
+    <fullyQualifiedTypeName name="java.net.URI"/>
+</qualifiedTypeNameHistroy>

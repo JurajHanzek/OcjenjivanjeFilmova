@@ -1,0 +1,166 @@
+
+
+<div class="row" style="margin-bottom: 600px;">
+    <div class="col-lg-6">
+      <div class="centered">
+        <img src="{{movie.image}} " >
+      </div>
+    </div>
+
+ 
+
+    <div class="col-lg-6"> <div class="centered">
+      <h2 style="color: red;">{{movie.title}} <span style="color: white;">(Ukupna ocjena</span> {{ukupno}}<span style="color: white; padding-right: 20px;">/10)
+      </span> 
+      <span *ngFor="let role of userService?.currentUser?.authorities" ><hr>
+      <span (click)="erase()" *ngIf="role==='ROLE_ADMIN'" class="btn btn-outline-danger" style="color: red; " >Obriši film!</span><span style="padding-left: 20px;"></span>
+      <span [routerLink]="['/update-component', movie.idMovie]" *ngIf="role==='ROLE_ADMIN'" class="btn btn-outline-warning" style="color: yellow; " >Ažuriraj film!</span></span>
+      <span style="padding-left: 20px;"><span onclick="document.getElementById('id01').style.display='block'" class="btn btn-outline-primary">Dodaj ocjenu</span>
+      </span>
+       
+      
+   
+   
+    <div class="mmodal-background"></div>
+    
+      
+    
+         
+      </h2>
+      <p>{{movie.synopsis}}</p>
+      <p>Godina izlaska:{{movie.releaseyear}}.</p>
+      <p>Trajanje filma:{{movie.durationMin}}min</p>
+      <p>Rated:{{movie.rated}}</p>
+      
+      <div class="row" >
+        <div class="col-lg-6" style="text-align: center;">
+            <h3>Redatelj</h3></div>
+            <div class="col-lg-6" style="text-align: center;">
+                <h3>Filmski studio</h3></div>
+            </div>
+      <div class="row" >
+        <div class="col-lg-6" style="text-align: center;">
+            <img id ="dir"src="{{director.image}}" width="50" height="50" style="border: 2px solid red; padding: 10px;"> </div>
+            <div class="col-lg-6" style="text-align: center;">
+            <img id ="dir"src="{{movieStudio.image}}" width="100" height="50" style="border: 2px solid red; padding: 10px;"> </div>
+      </div>
+      <div class="row" >
+        <div class="col-lg-6" style="text-align: center;">
+            <p>{{director.name}}  {{director.lastName}}</p></div>
+            <div class="col-lg-6" style="text-align: center;">
+                <p>{{movieStudio.name}} </p></div>
+            </div>
+    </div>
+</div>
+</div>
+
+<div  class="row" >
+    <div class="col-lg-3" style="text-align: center;">
+        <h1 class="btn btn-outline-warning" style="font-size: 25px;" >{{ocjena.imdbRating}}</h1></div>
+    <div class="col-lg-3" style="text-align: center;">
+        <h1 class="btn btn-outline-danger" style="font-size: 25px;" >{{ocjena.rottenRating}}</h1></div>
+    <div class="col-lg-3" style="text-align: center;">
+        <h1 class="btn btn-outline-light" style="font-size: 25px;" >{{ocjena.metacriticRating}}</h1></div>
+    <div class="col-lg-3" style="text-align: center;">
+        <h1 class="btn btn-outline-primary" style="font-size: 25px;" >{{ocjena.rating}}</h1></div>
+</div>
+
+  <div class="row" style="padding: 10px;">
+    <div class="col-lg-3" style="text-align: center;">
+        <img src="./assets/img/imdb.jpg" width="270" height="125" > </div>
+    <div class="col-lg-3" style="text-align: center;">
+        <img src="./assets/img/rotten.png" width="270" height="125" > </div>
+    <div class="col-lg-3" style="text-align: center;">
+        <img src="./assets/img/metacritic.jpg"width="270" height="125"  > </div>
+    <div class="col-lg-3" style="text-align: center;">
+      <img src="./assets/img/blue.png"width="270" height="125" style="background-color: #1A1E23;" > </div>
+  </div>
+  <hr>
+<div style="text-align: center;">
+    <h1 style="text-align: center;">Trailer</h1>
+    <iframe width="560" height="315" [src]="sanitizer.bypassSecurityTrustResourceUrl(movie.trailerUrl)" frameborder="0" allowfullscreen></iframe>
+</div> 
+
+
+<div class="container marketing" style="text-align: center;">
+    <h1 style="text-align: center;">Glumci</h1>
+    <!-- Three columns of text below the carousel -->
+    <div class="row featurette" >
+      <div class="col-lg-6" *ngFor="let actor of actors;">
+        <img id="acimg" class="rounded-circle" src="{{actor.image}}" alt="Generic placeholder image" >
+        <h2 style="text-align: center;">{{actor.name}} {{actor.lastName}}</h2>
+        <p style="text-align:justify;">{{actor.info}}</p>
+        <p style="text-align: center;"><a class="btn btn-secondary" [routerLink]="['/actor-details-component', actor.idActors]" role="button">Detalji &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+     
+   
+
+    <hr class="featurette-divider">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col" style="width:30%">Ocjena</th>
+          <th scope="col" style="width:50%">Komentar</th>
+          <th scope="col" style="width:20%">User</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let komentar of movieRatings;">
+          <ng-container *ngIf="movie.idMovie===komentar.idMovie">
+            <th scope="row">{{komentar.rating}}</th>
+            <td style="padding-top: 20px;">{{komentar.komentar}}</td>
+            <span *ngFor="let user of users;" >
+              <ng-container *ngIf="user.id===komentar.idUser">
+                <td>{{user.username}}</td>
+               </ng-container>
+              </span>
+    
+        </ng-container>
+        </tr>
+       
+      </tbody>
+    </table>
+    <!-- /END THE FEATURETTES -->
+ 
+  </div><!-- /.MODAL -->
+
+  <span id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container form">
+        <div class="login-wrap" >
+          <div class="login-html">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright" style="background-color: rgba(255, 0, 0, 0.514);">&times;</span>
+
+            <div class="col-lg-3" style="text-align: center;">
+              <img src="./assets/img/blue.png"width="350" height="125"  > </div>
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked ><label for="tab-1" class="tab">  </label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up" ><label for="tab-2" class="tab"></label>
+            <div class="login-form">
+              
+              
+              <div class="sign-in-htm" >
+                        <div class="group">
+                            <label for="user" class="label">Ocjena 1-10</label>
+                            <input  placeholder={{ocjena.rating}} id="user" style="text-align: center;" autocomplete="off" type="number" class="input" [(ngModel)]="userRating.rating" required min="1" max="10"> 
+                        </div>
+                        <div class="group" style="padding-bottom: 20px;">
+                            <label for="pass" class="label">Komentar</label>
+                            <input placeholder="Komentar"style="text-align: center;" id="pass" type="text" class="input"  [(ngModel)]="userRating.komentar" required>
+                        </div>
+                       
+                        <div class="group" onclick="document.getElementById('id01').style.display='none'">
+                            <!--<input type="submit" class="button" value="Sign Up">-->
+                            <button
+                            (click)="rate()"
+                                        class="button" type="submit">Ocijeni!
+                                    </button>
+                        </div>
+                        <div class="hr"></div>
+                    </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </span>

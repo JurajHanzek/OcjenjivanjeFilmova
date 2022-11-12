@@ -1,0 +1,51 @@
+package com.hanzek.zavrsni.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hanzek.zavrsni.beans.Actor;
+import com.hanzek.zavrsni.beans.Director;
+import com.hanzek.zavrsni.beans.Movie;
+import com.hanzek.zavrsni.beans.MovieStudio;
+import com.hanzek.zavrsni.service.MovieService;
+
+@CrossOrigin("*")
+@RestController
+public class MovieController {
+	
+	@Autowired
+	private MovieService iMovieService;
+	
+	
+	@GetMapping("/movie/{id}")
+	public ResponseEntity<Movie> findMovieByID(@PathVariable Long id) {
+		Movie movie= iMovieService.findMovieByID(id);
+		return new ResponseEntity<>(movie,HttpStatus.OK);
+	}
+	
+	//Getta actore po filmu
+	@GetMapping("/movie/actors/{id}")
+	public ResponseEntity<List<Actor>> findMovieActors(@PathVariable Long id) {
+		List<Actor> actors= iMovieService.findActors(id);
+		return new ResponseEntity<>(actors,HttpStatus.OK);
+	}
+	
+	@GetMapping("/movie/director/{id}")
+	public ResponseEntity<Director> findMovieDirector(@PathVariable Long id) {
+		Director director= iMovieService.findDirector(id);
+		return new ResponseEntity<>(director,HttpStatus.OK);
+	}
+	
+	@GetMapping("/movie/studio/{id}")
+	public ResponseEntity<MovieStudio> findMovieStudio(@PathVariable Long id) {
+		MovieStudio movieStudio= iMovieService.findDirector(id);
+		return new ResponseEntity<>(movieStudio,HttpStatus.OK);
+	}
+}

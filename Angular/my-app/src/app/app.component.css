@@ -1,0 +1,44 @@
+  th {
+    height: 30px;
+  }
+  table[_ngcontent-ivi-c16] {
+    width: 25%;
+    padding-top:20px;
+  }
+  
+  th[_ngcontent-ivi-c16] {
+    height: 50px;
+  }
+header{
+  padding-bottom: 5%;
+}
+
+#slider{
+  margin: auto;
+  width: 50%;
+}
+
+#imgslider{
+  height: 500px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#acimg{
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+}
+
+.container1 {
+  height: 0px;
+  overflow: hidden;
+}
+
+.show {
+  overflow: visible;
+  height: auto;
+}

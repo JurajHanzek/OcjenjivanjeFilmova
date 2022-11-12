@@ -1,0 +1,11 @@
+
+<ul >
+	<li *ngFor="let actor of actors">
+        <img src="{{actor.image}}" width="200" height="300"> 
+		<p>{{actor.name}} {{actor.lastName}}</p>	
+		<p>Rođen {{actor.dateOfBirth}}</p>		
+		<p>{{actor.info}}</p>
+		<button class="btn btn-outline-danger my-2 my-sm-0"  [routerLink]="['/actor-details-component', actor.idActors]" >Detalji </button>
+	</li>
+</ul>
+

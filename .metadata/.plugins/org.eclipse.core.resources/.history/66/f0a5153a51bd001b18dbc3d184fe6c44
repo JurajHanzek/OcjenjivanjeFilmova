@@ -1,0 +1,64 @@
+package com.hanzek.zavrsni.beans;
+
+import com.mysql.cj.jdbc.Blob;
+
+public class Director {
+
+	private Long idDirector;
+	private String name;
+	private String lastName;
+	private String dateOfBirth;
+	private Long idCountry;
+	private Blob image;
+	
+	public Director() {}
+	public Director(Long idDirector, String name, String lastName, String dateOfBirth, Long idCountry,
+			Blob image) {
+		super();
+		this.idDirector = idDirector;
+		this.name = name;
+		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
+		this.idCountry = idCountry;
+		this.image = image;
+	}
+	public Long getIdDirector() {
+		return idDirector;
+	}
+	public void setIdDirector(Long idDirector) {
+		this.idDirector = idDirector;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	public Long getIdCountry() {
+		return idCountry;
+	}
+	public void setIdCountry(Long idCountry) {
+		this.idCountry = idCountry;
+	}
+	public Blob getImage() {
+		return image;
+	}
+	public void setImage(Blob image) {
+		this.image = image;
+	}
+	
+	
+	
+}

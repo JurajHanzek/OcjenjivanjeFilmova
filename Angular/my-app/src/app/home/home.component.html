@@ -1,0 +1,111 @@
+<h3 style="text-align: center; padding-bottom:20px ; font-size: 30px; border-bottom: red;" > <b>Sve ocjene Vaših omiljenih filmova na jednom mjestu!</b></h3>
+
+    <div id="slider">
+    <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+      <ng-template ngbSlide *ngFor="let movie of movies; index as i">
+
+        <div class="row" style="padding: 10px;">
+          <div class="col-lg-3" style="text-align: center;">
+              <img src="./assets/img/imdb.jpg" width="270" height="125" > </div>
+          <div class="col-lg-3" style="text-align: center;">
+              <img src="./assets/img/rotten.png" width="270" height="125" > </div>
+          <div class="col-lg-3" style="text-align: center;">
+              <img src="./assets/img/metacritic.jpg"width="270" height="125"  > </div>
+          <div class="col-lg-3" >
+            <img src="./assets/img/blue.png"width="270" height="125" style="background-color: #1A1E23;" > </div>
+        </div>
+
+
+        <div *ngFor="let ocjene of ocjene;" class="row" >
+          <ng-container *ngIf="ocjene.idMovie===movie.idMovie">
+            <div class="col-lg-3" style="text-align: center;">
+                <h1 class="btn btn-outline-warning" style="font-size: 25px;" >{{ocjene.imdbRating}}</h1></div>
+            <div class="col-lg-3" style="text-align: center;">
+                <h1 class="btn btn-outline-danger" style="font-size: 25px;" >{{ocjene.rottenRating}}</h1></div>
+            <div class="col-lg-3" style="text-align: center;">
+                <h1 class="btn btn-outline-light" style="font-size: 25px;" >{{ocjene.metacriticRating}}</h1></div>
+            <div class="col-lg-3" style="text-align: center;">
+                <h1 class="btn btn-outline-primary" style="font-size: 25px;" >{{ocjene.rating}}</h1></div>
+           </ng-container>
+        </div>
+
+        
+
+        <div class="carousel-caption">
+          <h3>{{movie.title}}</h3>
+        </div>
+        <a [routerLink]="['/movie-details-component', movie.idMovie]">
+          <div class="picsum-img-wrapper">
+            <img id ="imgslider"src="{{movie.image}}" alt="movie.title">  
+            
+          </div>
+        </a>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+    
+    <main role="main">
+
+      <div class="container marketing">
+    
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Sve ocjene na jednom mjestu! <span class="text-muted">Jednostavno i prakticno!</span></h2>
+            <p class="lead">IMDB, Metacritic, Rotten Tomatoes sve ocjene na jednom mjestu. Najveća baza podataka o filmovima na internetu koja sadrži mnoštvo podataka o filmovima, filmskim glumcima, redateljima, scenaristima, producentima, te ocjenama koje su uzete sa svih najvaznijih stranica.</p>
+          </div>
+          <div class="col-md-5">
+            <img src="./assets/img/posters.jpg"width="500" height="125" style="background-color: #1A1E23;" > 
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Mogućnost dodavanja vlastite ocjene. <span class="text-muted">SHOWPAD</span></h2>
+            <p class="lead">Web stranica koja prikuplja recenzije filmova. Za svaki film prosječne su ocjene iz svakog pregleda. Uz prijavu možete i Vi sudjelovati te ocijeniti film sa ocjenom od 1-10 prema Vlastitom mišljenju.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img src="./assets/img/blue.png"width="270" height="125" style="background-color: #1A1E23;" >
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Jednostavno dodajte nove filmove u bazu. <span class="text-muted">Nadogradite bazu.</span></h2>
+            <p class="lead">S opcijom dodaj film omogućuje se dodavanje novih filmova sa automtskim ažuriranjem ocjena.
+                Pristupačno i jednostavno za sve korisnike. </p>
+          </div>
+          <div class="col-md-5">
+            <img src="./assets/img/sql.jpg"width="270" height="105" style="background-color: #1A1E23;" >
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+     
+      </div><!-- /.container -->
+
+   
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2021 Hanžek, Inc. &middot; <a href="https://www.tvz.hr">TVZ</a> &middot;</p>
+      </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+ 

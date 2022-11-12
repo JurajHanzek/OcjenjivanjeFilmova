@@ -1,0 +1,63 @@
+package com.hanzek.zavrsni.beans;
+
+import com.mysql.cj.jdbc.Blob;
+
+public class Character {
+	private Long idCharacter;
+	private String name;
+	private String lastname;
+	private String dateOfBirth;
+	private Long idCountry;
+	private Blob image;
+	
+	public Character() {}
+	public Character(Long idCharacter, String name, String lastname, String dateOfBirth, Long idCountry,
+			Blob image) {
+		super();
+		this.idCharacter = idCharacter;
+		this.name = name;
+		this.lastname = lastname;
+		this.dateOfBirth = dateOfBirth;
+		this.idCountry = idCountry;
+		this.image = image;
+	}
+	public Long getIdCharacter() {
+		return idCharacter;
+	}
+	public void setIdCharacter(Long idCharacter) {
+		this.idCharacter = idCharacter;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	public Long getIdCountry() {
+		return idCountry;
+	}
+	public void setIdCountry(Long idCountry) {
+		this.idCountry = idCountry;
+	}
+	public Blob getImage() {
+		return image;
+	}
+	public void setImage(Blob image) {
+		this.image = image;
+	}
+	
+	
+	
+}

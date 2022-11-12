@@ -1,0 +1,121 @@
+<!--<div class="h-100">
+    <div class="container">
+        <div class="row justify-content-center pt-5">
+            <div class="col text-center">
+                <h1 class="display-3 text-dark">Movie</h1>
+                <h3 class="text-uppercase text-muted">App</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-10 col-lg-6 h-100">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <form #authenticationForm="ngForm" class="form-signin" name="authenticationForm">
+                            <div class="text-center mb-4">
+                                <h1 class="h3 mb-3 font-weight-normal">Logiraj se</h1>
+                            </div>
+                            <div class="form-label-group mb-3">
+                                <label>USS</label>
+                                <input [(ngModel)]="userCredentials.username" [disabled]="authenticating" appInputAutofocus
+                                    autocomplete="username" class="form-control" name="username"
+                                    placeholder="Unesite korisničko ime" required type="username">
+                            </div>
+                            <div class="form-label-group">
+                                <label>PASS</label>
+                                <input [(ngModel)]="userCredentials.password" [disabled]="authenticating"
+                                    autocomplete="current-password" class="form-control" name="password"
+                                    placeholder="Unesite lozinku" required type="password">
+                            </div>
+                            <button (click)="login()"
+                                [disabled]="!authenticationForm.valid || authenticating"
+                                class="btn btn-lg btn-primary btn-block mt-3" type="submit">BUTTON<span
+                                    class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                                    *ngIf="authenticating"></span>
+                            </button>
+                            <button (click)="ss()"
+                            
+                            class="btn btn-lg btn-primary btn-block mt-3" type="submit">BUTTONss<span
+                                class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                                *ngIf="authenticating"></span>
+                        </button>
+                        </form>
+                        <div class="alert alert-danger mt-2" *ngIf="loginFailed">
+                            ERR
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+
+<div class="login-wrap" >
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Prijava</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registracija</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">korisničko ime</label>
+					<input id="user" type="text" class="input" autocomplete="off" [(ngModel)]="userCredentials.username" [disabled]="authenticating" 
+					placeholder="Unesite korisničko ime" >
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Lozinka</label>
+					<input id="pass" type="password" class="input"  placeholder="Unesite lozinku" data-type="password" [(ngModel)]="userCredentials.password" [disabled]="authenticating">
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Zapamti me</label>
+				</div>
+				<div class="group">
+					<!--<input type="submit" class="button" value="Sign In">-->
+
+					<button (click)="login()"
+                                
+                                class="button" type="submit" style="font-weight:bold ;">Prijavi se
+                            </button>
+				</div>
+				<input type="text" [(ngModel)]="log" style="color: red; background-color:rgba(0,0,0,.24); border:none; outline:none; text-align: center; width: 100%;"onfocus="this.blur()" readonly="readonly" >
+
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="#forgot">Zaboravljena lozinka?</a>
+				</div>
+			</div>
+			<div class="sign-up-htm" >
+				<div class="group">
+					<label for="user" class="label">korisničko ime</label>
+					<input id="user" autocomplete="off" type="text" class="input" [(ngModel)]="signup.username" required>
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Lozinka</label>
+					<input id="pass" type="password" class="input" data-type="password" [(ngModel)]="signup.password" required>
+				</div>
+				<div class="group">
+					<label  class="label">Ponovite lozinku</label>
+					<input id="sd" type="password" class="input" data-type="password"[(ngModel)]="random" required>
+				</div>                                                      
+				<div class="group">
+					<label for="pass" class="label">Ime</label>
+					<input id="pass" type="text" class="input" autocomplete="off" [(ngModel)]="signup.firstName" required>
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Prezime</label>
+					<input id="pass" type="text" class="input" autocomplete="off" [(ngModel)]="signup.lastName" required>
+				</div>
+				<div class="group">
+					<!--<input type="submit" class="button" value="Sign Up">-->
+					<button (click)="signUp()" 
+                                
+                                class="button" type="submit">REGISTRIRAJ SE
+                            </button>
+				</div>
+				<input type="text" [(ngModel)]="success" style="color: red; background-color:rgba(0,0,0,.24); border:none; outline:none; text-align: center; width: 100%;"onfocus="this.blur()" readonly="readonly" >
+				<div class="hr"></div>
+			
+			</div>
+		</div>
+	</div>
+</div>
